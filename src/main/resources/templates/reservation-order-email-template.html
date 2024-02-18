@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>View Orders</title>
+  <style>
+    .plan-table {
+      margin: auto;
+      width: 80%;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .button-container {
+      margin-top: 10px;
+    }
+
+    .action-button {
+      margin-right: 5px;
+    }
+    .create-plan-form {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      width: 600px;
+      min-height: 400px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="plan-table">
+  <h3>Hello, your reservation order will be ready for pickup soon!</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>Plan Type</th>
+      <th>Available Slots</th>
+      <th>Delivery Date</th>
+      <th>Meal Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="plan : ${plans}">
+      <td th:text="${plan.planType}"></td>
+      <td th:text="${plan.availableSlots}"></td>
+      <td th:text="${#temporals.format(plan.deliveryDate, 'yyyy-MM-dd HH:mm')}"></td>
+      <td>
+        <ul>
+          <li th:each="meal : ${plan.meals}" th:text="${meal.mealName}"/>
+        </ul>
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
