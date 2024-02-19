@@ -24,7 +24,7 @@ jobs:
         run: sudo apt-get install maven -y
 
       - name: Build JAR with Maven
-        run: sudo mvn clean package -DskipTests=true
+        run: mvn clean package -DskipTests=true
 
       - name: Move Jar to Root Folder
         run: mv ./target/unichef.jar ./
