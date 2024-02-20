@@ -26,10 +26,6 @@ source "amazon-ebs" "my-ami" {
     "us-east-1",
   ]
 
-  aws_polling {
-    delay_seconds = 120
-    max_attempts  = 50
-  }
 
   instance_type = "t2.micro"
   source_ami    = "${var.source_ami}"

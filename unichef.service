@@ -5,14 +5,13 @@ After=cloud-final.service
 [Service]
 User=unichef
 ExecStart=/home/unichef/unichef.jar
-Restart=always
-RestartSec=on-failure
+Restart=on-failure
+RestartSec=5
 StandardOutput=append:/var/log/unichef-output.log
 StandardError=append:/var/log/unichef-error.log
 SuccessExitStatus=143
 
 
 [Install]
-WantedBy=multi-user.target
 WantedBy=cloud-init.target
 
