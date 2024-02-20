@@ -24,4 +24,4 @@ sudo chmod +x $USER_HOME_DIR/unichef.jar
 sudo systemctl daemon-reload
 sudo systemctl enable unichef.service
 #sudo systemctl start unichef.service
-sudo systemctl status unichef
+#sudo systemctl status unichef
