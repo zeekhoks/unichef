@@ -24,6 +24,9 @@ jobs:
         run: sudo apt-get install maven -y
 
       - name: Build JAR with Maven
+        run: sudo touch ./src/main/resources/application.properties
+
+      - name: Build JAR with Maven
         run: mvn clean package -DskipTests=true
 
       - name: Move Jar to Root Folder

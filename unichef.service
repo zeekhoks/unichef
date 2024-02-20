@@ -3,8 +3,8 @@ Description=myapp
 After=cloud-final.service
 
 [Service]
-User=ubuntu
-ExecStart=/home/ubuntu/webapp/unichef.jar
+User=unichef
+ExecStart=/home/unichef/unichef.jar
 Restart=always
 RestartSec=10
 StandardOutput=append:/var/log/unichef-output.log
