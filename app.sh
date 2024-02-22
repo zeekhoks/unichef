@@ -3,6 +3,7 @@
 USER_HOME_DIR=/home/unichef
 
 sudo apt-get update -y
+
 sudo apt-get upgrade -y
 
 echo "Installing Open JDK"
