@@ -14,7 +14,7 @@ import java.util.List;
 @Order(1)
 public class AuthorizationFilter implements Filter {
 
-    private static List<String> acceptedURLS = List.of("/","/login","/signup","/logout");
+    private static List<String> acceptedURLS = List.of("/","/login","/signup","/logout","/actuator/health");
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
