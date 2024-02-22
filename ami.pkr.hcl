@@ -5,12 +5,12 @@ variable "aws_region" {
 
 variable "source_ami" {
   type    = string
-  default = "ami-0c7217cdde317cfec"
+  default = "ami-058bd2d568351da34"
 }
 
 variable "ssh_username" {
   type    = string
-  default = "ubuntu"
+  default = "admin"
 }
 
 variable "vpc_id" {
@@ -35,8 +35,8 @@ source "amazon-ebs" "my-ami" {
   launch_block_device_mappings {
     delete_on_termination = true
     device_name           = "/dev/xvda"
-    volume_size           = 50
-    volume_type           = "gp2"
+    volume_size           = 8
+    volume_type           = "gp3"
   }
 
 }
