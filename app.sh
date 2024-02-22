@@ -2,16 +2,19 @@
 
 USER_HOME_DIR=/home/unichef
 
-sudo apt-get update -y
+sudo apt update -y
 
-sudo apt-get upgrade -y
+sudo apt upgrade -y
 
 sudo apt --fix-missing install
 
 echo "Installing Open JDK"
-sudo apt-get install openjdk-19-jdk -y
+sudo apt install openjdk-19-jre -y
+sudo apt install openjdk-19-jdk -y
 echo "Java installed successfully"
 echo "$(java --version) is the version of java"
+
+sudo update-alternatives --config java
 
 echo "Creating new group and users"
 sudo groupadd unichef
