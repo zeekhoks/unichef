@@ -2,19 +2,24 @@
 
 USER_HOME_DIR=/home/unichef
 
-sudo apt-get update -y
+sudo apt update -y
 
-sudo apt-get upgrade -y
+sudo apt upgrade -y
 
 #sudo apt --fix-missing install
 
 echo "Installing Open JDK"
-sudo apt-get install openjdk-17-jre -y
+#sudo apt-get install openjdk-17-jre -y
 #sudo apt install openjdk-17-jdk -y
+
+wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
+
+sudo apt install ./jdk-21_linux-x64_bin.deb -y
+
 echo "Java installed successfully"
 echo "$(java --version) is the version of java"
 
-sudo update-alternatives --config java
+#sudo update-alternatives --config java
 
 echo "Creating new group and users"
 sudo groupadd unichef
